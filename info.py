@@ -22,9 +22,9 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 PICS = (environ.get('PICS', 'https://telegra.ph/file/4d485fb00ad3dfc8f970d.jpg https://telegra.ph/file/0ce633f7a672cee8bd6bf.jpg https://telegra.ph/file/03b9bd08a35c56d4342be.jpg https://telegra.ph/file/a027521653c7a66d81f15.jpg https://telegra.ph/file/6f8ec24b601465939cd6f.jpg https://telegra.ph/file/0aa9504721a5b4136c607.jpg https://telegra.ph/file/e87d8d4ab2424f95880db.jpg https://telegra.ph/file/723374f0351c4f1ca07bc.jpg https://telegra.ph/file/de0102ad4616c54c09b14.jpg https://telegra.ph/file/789e87f6a69d74c6ad955.jpg')).split()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('498161201', '').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('-1001435543475', '0').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('false', '').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '498161201').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001435543475').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', 'False').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get(' -1001667205410')
 auth_grp = environ.get('-1001366099977')
@@ -37,8 +37,8 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "Project0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('-1001632444014', 0))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'CINEMACOMPANY')
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001632444014'))
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'cinemakottakatwo00')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
